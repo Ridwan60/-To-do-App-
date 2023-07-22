@@ -10,12 +10,15 @@ function addTask() {
   
     const newTask = document.createElement("li");
     newTask.className = "task";
+    newTask.id = Date.now();
     newTask.innerHTML = `
       <div class="task-text">${taskInput.value}</div>
       <button onclick="deleteTask(this)">Delete</button>
     `;
     taskList.appendChild(newTask);
   
+    //console.log(taskInput.value);
+
     taskInput.value = "";
   }
   
@@ -23,6 +26,7 @@ function addTask() {
   function deleteTask(button) {
     const taskList = document.getElementById("taskList");
     const taskItem = button.parentElement;
+    //console.log(taskItem.id);
     taskList.removeChild(taskItem);
   }
   
