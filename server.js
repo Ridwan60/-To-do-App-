@@ -22,6 +22,7 @@ app.post('/signup', (req, res) => signup(req, res));
 app.post('/addNewList', authenticateToken, (req, res) => addListElement(req, res));
 app.delete('/deleteListElement', authenticateToken, (req, res) => deleteElement(req, res));
 app.delete('/deleteAllElements', authenticateToken, (req, res) => deleteAll(req, res));
+app.post('/getAllLists', authenticateToken, (req, res) => GetLists(req, res));
 
 // funtions
 function authenticateToken(req, res, next) 
@@ -89,7 +90,7 @@ function signup(req, res)
 }
 function addListElement(req, res)
 {
-    const { id, username, content} = req.body;
+    const { id, username, content } = req.body;
     const sql = 'INSERT INTO tasks VALUES (?, ?, ?)';
     db.query(sql, [id, username, content], (err, result) => {
         if (err) {
@@ -120,6 +121,18 @@ function deleteAll(req, res)
             return res.status(500).json({ message: 'Database error.', msg: err });
         }        
         res.status(201).json({message: `deleted all list of ${username}`});
+    });
+}
+function GetLists(req, res)
+{
+    const { username } = req.body;
+
+    const sql = 'SELECT id, content FROM tasks WHERE username = ?';
+    db.query(sql, [username], (err, result) => {
+        if (err) {
+            return res.status(500).json({ message: 'Database error.', msg: err });
+        }        
+        res.status(201).json(result);
     });
 }
 
