@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header-title {
+    font-size: 36px;
+    color: #007bff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 90%;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  
+  .container:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-container button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .input-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .task {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .task:last-child {
+    border-bottom: none;
+  }
+  
+  .task-text {
+    flex: 1;
+  }
+  
+  .task button {
+    padding: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .task button:hover {
+    background-color: #c82333;
+  }
+  
+  button#clearBtn {
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+  }
+  
+  button#clearBtn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Confirmation dialog styles */
+  .confirmation-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .dialog-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .btn-confirm {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-confirm:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-cancel {
+    background-color: #dc3545;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+  }
+  
+  /* Additional styles to center the "Clear All Tasks" button */
+  .container {
+    text-align: center;
+  }
+  
+  /* Styles for the button to match the container width on smaller screens */
+  @media screen and (max-width: 480px) {
+    button#clearBtn {
+      width: 100%;
+    }
+  }
+  

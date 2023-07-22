@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="header-title">To-Do List</h1>
+    </div>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter task">
+            <button id="addBtn">Add</button>
+        </div>
+        <ul id="taskList">
+            <!-- Tasks will be added dynamically here -->
+        </ul>
+        <button id="clearBtn">Clear All Tasks</button>
+    </div>
+
+    <!-- Confirmation dialog -->
+    <div class="confirmation-dialog" id="confirmationDialog">
+        <div class="dialog-content">
+            <p>Are you sure you want to delete all tasks?</p>
+            <div class="dialog-buttons">
+                <button class="btn-confirm" id="btnConfirm">Yes</button>
+                <button class="btn-cancel" id="btnCancel">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./home.js"></script>
+</body>
+
+</html>
