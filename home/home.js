@@ -1,5 +1,9 @@
 const token = localStorage.getItem('token');
 
+document.getElementById("Logout").addEventListener("click", () => {
+  window.location.href = "../login/login.html";
+});
+
 // Function to add a new task
 function addTask() {
   const taskInput = document.getElementById("taskInput");
