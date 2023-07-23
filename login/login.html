@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>কার্যবিবরনী</title>
-  <link rel="stylesheet" href="./login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কার্য তালিকা</title>
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
-  <div class="header">
-    <h1 class="header-title">কার্যবিবরনী</h1>
-  </div>
-  <div class="container">
-    <h2>Login/Logout Example</h2>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-      <button type="submit">Login</button>
-    </form>
-    <button id="logoutBtn" class="hidden">Logout</button>
-  </div>
-  <script src="./login.js"></script>
+    <div class="header">
+        <h1 class="header-title">কার্য তালিকা</h1>
+    </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+        <p class="login-text">Not registered yet? Signup with</p>
+        <button class="btn-signup" href="../signup/signup.html">Signup</button>
+    </div>
+    <script src="./login.js"></script>
 </body>
 </html>
