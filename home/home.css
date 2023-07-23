@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  flex-direction: column; /* Added to create a column layout for header and container */
+  flex-direction: column; 
 }
 
 @keyframes gradientAnimation {
@@ -54,10 +54,10 @@ body {
 
 .container {
   background-color: #f7f7f7;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 400px; /* Increased container width */
   max-width: 90%;
   position: relative;
   overflow: hidden;
@@ -201,12 +201,49 @@ button#clearBtn:hover {
   background-color: #c82333;
 }
 
-/* Additional styles to center the "Clear All Tasks" button */
+
 .container {
   text-align: center;
 }
 
-/* Styles for the button to match the container width on smaller screens */
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-image: linear-gradient(45deg, #F9326E, #00b3e6);
+  opacity: 0.6;
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+
+.container:hover::before {
+  opacity: 0.8;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.6) 20%, transparent 60%);
+  opacity: 0.6;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.container::before,
+.container::after {
+  border-radius: 15px;
+}
+
+
 @media screen and (max-width: 480px) {
   button#clearBtn {
     width: 100%;
