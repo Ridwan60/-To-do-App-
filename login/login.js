@@ -1,6 +1,7 @@
 const userNameData = document.getElementById('username');
 const passwordData = document.getElementById('password');
 const loginForm = document.getElementById('loginForm');
+const redirectButton = document.getElementById("Signup");
 
 loginForm.addEventListener("submit", function(event) {
     event.preventDefault();    
@@ -38,3 +39,10 @@ function login(username, pass)
         alert("Server error")
       });
 }
+
+
+// Add event listener to the button
+redirectButton.addEventListener("click", () => {
+    // Redirect to the new HTML page
+    window.location.href = "../signup/signup.html"; // Replace "path/to/another-page.html" with the actual path of the new HTML page.
+});

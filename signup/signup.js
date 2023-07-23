@@ -1,6 +1,7 @@
 const userNameData = document.getElementById('username');
 const passwordData = document.getElementById('password');
 const signupForm = document.getElementById('signupForm');
+const redirectButton = document.getElementById("loginBtn");
 
 signupForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -35,3 +36,10 @@ function signup(username, pass)
         alert("Server error")
       });
 }
+
+
+
+
+redirectButton.addEventListener("click", () => {
+    window.location.href = "../login/login.html"; 
+});
