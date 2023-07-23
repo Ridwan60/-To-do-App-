@@ -1,0 +1,149 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Hide any content that goes beyond the container */
+  }
+  
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #007bff, #4caf50, #ff7f50, #ff2d55);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .heading {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeInText 1.5s ease forwards; /* Apply the animation */
+  }
+  
+  /* Define the fadeInText animation */
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .description {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 50px;
+  }
+  
+  .options {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    animation: moveButtons 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .btn-login {
+    background-color: #ff7f50; /* Coral color */
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(255, 127, 80, 0.3);
+  }
+  
+  .btn-signup {
+    background-color: #4caf50; /* Green color */
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(76, 175, 80, 0.3);
+  }
+  
+  .btn:hover {
+    transform: scale(1.05) rotate(5deg); /* Scale and rotate on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add a gradient background on hover */
+  .btn-login:hover {
+    background-color: #ff6c40; /* Lighter coral color */
+  }
+  
+  .btn-signup:hover {
+    background-color: #4aae4a; /* Lighter green color */
+  }
+  
+  /* Move the buttons smoothly on load */
+  @keyframes moveButtons {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 36px;
+    }
+  
+    .description {
+      font-size: 18px;
+    }
+  
+    .btn {
+      font-size: 16px;
+    }
+  }
+  
